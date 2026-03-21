@@ -81,10 +81,10 @@ export default function ContactForm() {
                 <div>
                   <h4 className="font-semibold text-gray-900">Phone</h4>
                   <p className="text-gray-600 text-sm mt-1">
-                    TEL/FAX: {COMPANY.phone}
+                    Mobile: {COMPANY.mobile}
                   </p>
                   <p className="text-gray-600 text-sm">
-                    Mobile: {COMPANY.mobile}
+                    Mobile: {COMPANY.mobile2}
                   </p>
                 </div>
               </div>

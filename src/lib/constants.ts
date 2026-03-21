@@ -7,10 +7,10 @@ export const COMPANY = {
   description:
     "Power Lead Technical Services Co. WLL (PLTS) was established in 2013 with a clear vision to deliver reliable, high-quality engineering services and innovative solutions to the power sector in Qatar. Since its inception, the company has steadily grown into a trusted service provider, recognized for its technical expertise, strong work ethics, and commitment to excellence.",
   address: "Post Box No. 63086, Doha, Qatar",
-  phone: "+974 44715785",
   mobile: "+974 55493012",
+  mobile2: "+974 55817024",
   email: "info@pltsqatar.com",
-  email2: "p.mayakannan@pltsqatar.com",
+  email2: "Sales@pltsqatar.com",
   workingHours: "Sat–Thu: 8 AM to 6 PM",
   closedDay: "Friday: Closed",
   mapEmbedUrl:
@@ -423,24 +423,19 @@ export const PRODUCTS = [
 
 export const TEAM = [
   {
-    name: "P. Mayakannan",
-    role: "Founder & Managing Director",
-    bio: "A Graduate in Electrical Engineering, with over 15 years of experience in India and the Middle East in the field of construction of Electrical High/Low Voltage Systems.",
+    name: "Mr. Hamad Mohammed",
+    role: "Managing Director",
+    qualifications: "T B Al - Raseei",
   },
   {
-    name: "N. Yuvanesan",
-    role: "HR Manager",
-    bio: "Experienced HR professional managing human resources operations and talent acquisition for the company.",
+    name: "Mr. S K Sakthivel",
+    role: "CEO",
+    qualifications: "KAHRAMAA, QATAR ENERGY and UPDA Approved Engineer",
   },
   {
-    name: "Amit Sharma",
-    role: "Accounts Manager",
-    bio: "Over 20+ years of experience in India and the Middle East, managing financial operations and accounts.",
-  },
-  {
-    name: "P. Jayakanthan",
-    role: "Planning Engineer & Electrical Design Engineer",
-    bio: "A graduate in Electrical and Electronics Engineering, with over 10+ years of experience in India and the Middle East.",
+    name: "Mr. Arun Antony",
+    role: "General Manager",
+    qualifications: "KAHRAMAA, QATAR ENERGY and UPDA Approved Engineer",
   },
 ] as const;
 

@@ -61,7 +61,7 @@ export default function RootLayout({
       addressLocality: "Doha",
       addressCountry: "QA",
     },
-    telephone: COMPANY.phone,
+    telephone: COMPANY.mobile,
     email: COMPANY.email,
     foundingDate: "2013",
     sameAs: [],

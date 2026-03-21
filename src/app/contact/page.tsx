@@ -6,10 +6,10 @@ import { COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: `Contact ${COMPANY.fullName} in Doha, Qatar. Phone: ${COMPANY.phone}, Email: ${COMPANY.email}. Engineering services for the power sector.`,
+  description: `Contact ${COMPANY.fullName} in Doha, Qatar. Mobile: ${COMPANY.mobile}, Email: ${COMPANY.email}. Engineering services for the power sector.`,
   openGraph: {
     title: `Contact Us | ${COMPANY.shortName} Qatar`,
-    description: `Get in touch with PLTS Qatar. Located in Doha, Qatar. Call ${COMPANY.phone} or email ${COMPANY.email}.`,
+    description: `Get in touch with PLTS Qatar. Located in Doha, Qatar. Call ${COMPANY.mobile} or email ${COMPANY.email}.`,
   },
 };
 
