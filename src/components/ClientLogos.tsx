@@ -4,6 +4,19 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { CLIENTS } from "@/lib/constants";
 
+const cardColors = [
+  "bg-blue-50 text-blue-700",
+  "bg-emerald-50 text-emerald-700",
+  "bg-purple-50 text-purple-700",
+  "bg-amber-50 text-amber-700",
+  "bg-rose-50 text-rose-700",
+  "bg-cyan-50 text-cyan-700",
+  "bg-indigo-50 text-indigo-700",
+  "bg-teal-50 text-teal-700",
+  "bg-orange-50 text-orange-700",
+  "bg-pink-50 text-pink-700",
+];
+
 export default function ClientLogos() {
   return (
     <section className="py-20 bg-gray-50">
@@ -35,15 +48,19 @@ export default function ClientLogos() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 flex items-center justify-center h-28 shadow-sm border border-gray-100 hover:shadow-md hover:border-secondary/20 transition-all group"
+              className={`rounded-xl p-6 flex items-center justify-center h-28 shadow-sm border border-gray-100 hover:shadow-md hover:border-secondary/20 transition-all group ${"logo" in client && client.logo ? "bg-white" : cardColors[index % cardColors.length]}`}
             >
-              <Image
-                src={client.logo}
-                alt={client.name}
-                width={120}
-                height={60}
-                className="max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all"
-              />
+              {"logo" in client && client.logo ? (
+                <Image
+                  src={(client as unknown as { logo: string }).logo}
+                  alt={client.name}
+                  width={120}
+                  height={60}
+                  className="max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all"
+                />
+              ) : (
+                <span className={`font-bold text-center leading-tight ${client.name.length > 10 ? "text-xs" : "text-base"}`}>{client.name}</span>
+              )}
             </motion.div>
           ))}
         </div>

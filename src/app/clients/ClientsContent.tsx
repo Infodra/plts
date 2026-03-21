@@ -6,6 +6,19 @@ import { CLIENTS } from "@/lib/constants";
 import SectionHeader from "@/components/SectionHeader";
 import Link from "next/link";
 
+const cardColors = [
+  "bg-blue-50 text-blue-700",
+  "bg-emerald-50 text-emerald-700",
+  "bg-purple-50 text-purple-700",
+  "bg-amber-50 text-amber-700",
+  "bg-rose-50 text-rose-700",
+  "bg-cyan-50 text-cyan-700",
+  "bg-indigo-50 text-indigo-700",
+  "bg-teal-50 text-teal-700",
+  "bg-orange-50 text-orange-700",
+  "bg-pink-50 text-pink-700",
+];
+
 export default function ClientsContent() {
   return (
     <>
@@ -26,18 +39,19 @@ export default function ClientsContent() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-8 flex flex-col items-center justify-center shadow-sm border border-gray-100 hover:shadow-xl hover:border-secondary/20 transition-all group"
               >
-                <div className="w-20 h-20 bg-gray-50 group-hover:bg-secondary/5 rounded-2xl flex items-center justify-center mb-4 transition-colors overflow-hidden p-2">
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    width={80}
-                    height={80}
-                    className="max-h-16 w-auto object-contain"
-                  />
+                <div className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-4 transition-colors overflow-hidden p-2 ${"logo" in client && client.logo ? "bg-gray-50 group-hover:bg-secondary/5" : cardColors[index % cardColors.length]}`}>
+                  {"logo" in client && client.logo ? (
+                    <Image
+                      src={(client as unknown as { logo: string }).logo}
+                      alt={client.name}
+                      width={80}
+                      height={80}
+                      className="max-h-16 w-auto object-contain"
+                    />
+                  ) : (
+                    <span className={`font-bold text-center leading-tight ${client.name.length > 10 ? "text-xs" : "text-lg"}`}>{client.name}</span>
+                  )}
                 </div>
-                <h3 className="font-semibold text-gray-700 text-sm text-center group-hover:text-primary transition-colors">
-                  {client.name}
-                </h3>
               </motion.div>
             ))}
           </div>

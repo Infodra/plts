@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { SERVICES } from "@/lib/constants";
 import SectionHeader from "@/components/SectionHeader";
 import Link from "next/link";
@@ -50,50 +51,97 @@ export default function ServicesDetail() {
           className={`py-20 ${idx % 2 === 0 ? "bg-gray-50" : "bg-white"}`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <span className="text-5xl mb-4 block">{service.icon}</span>
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h2>
-                <p className="text-gray-600 leading-relaxed mb-8">
-                  {service.description}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <span className="text-5xl mb-4 block">{service.icon}</span>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h2>
+              <p className="text-gray-600 leading-relaxed max-w-4xl">
+                {service.description}
+              </p>
+              {service.description2 && (
+                <p className="text-gray-600 leading-relaxed max-w-4xl mt-4">
+                  {service.description2}
                 </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-light transition-all"
+              )}
+              {"image" in service && (service as unknown as { image: string }).image && (
+                <div className="mt-8 rounded-2xl overflow-hidden shadow-lg max-w-lg">
+                  <Image
+                    src={(service as unknown as { image: string }).image}
+                    alt={service.title}
+                    width={600}
+                    height={300}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              )}
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {service.categories.map((category, catIdx) => (
+                <motion.div
+                  key={catIdx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: catIdx * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100"
                 >
-                  Enquire About This Service
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-                  <h3 className="font-bold text-gray-900 mb-6">Key Capabilities</h3>
-                  <ul className="space-y-4">
-                    {service.features.map((feature, i) => (
+                  <h3 className="font-bold text-gray-900 mb-4">{category.name}</h3>
+                  <ul className="space-y-3">
+                    {category.items.map((item, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <div className="w-6 h-6 bg-secondary/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                          <svg className="w-3.5 h-3.5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div className="w-5 h-5 bg-secondary/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                          <svg className="w-3 h-3 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <span className="text-gray-700 text-sm">{feature}</span>
+                        <span className="text-gray-700 text-sm">{item}</span>
                       </li>
                     ))}
                   </ul>
+                </motion.div>
+              ))}
+            </div>
+
+            {service.keyBenefits.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-primary/5 rounded-2xl p-8"
+              >
+                <h3 className="font-bold text-gray-900 mb-4">Key Benefits</h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {service.keyBenefits.map((benefit, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="w-5 h-5 bg-secondary/10 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                        <svg className="w-3 h-3 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-gray-700 text-sm">{benefit}</span>
+                    </div>
+                  ))}
                 </div>
               </motion.div>
+            )}
+
+            <div className="mt-8">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-light transition-all"
+              >
+                Enquire About This Service
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
             </div>
           </div>
         </section>

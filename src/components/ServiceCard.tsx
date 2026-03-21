@@ -7,7 +7,7 @@ interface ServiceCardProps {
   title: string;
   icon: string;
   description: string;
-  features: readonly string[];
+  categories: readonly { name: string; items: readonly string[] }[];
   id: string;
   index: number;
 }
@@ -16,7 +16,7 @@ export default function ServiceCard({
   title,
   icon,
   description,
-  features,
+  categories,
   id,
   index,
 }: ServiceCardProps) {
@@ -35,7 +35,7 @@ export default function ServiceCard({
       <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
       <p className="text-gray-600 text-sm leading-relaxed mb-6">{description}</p>
       <ul className="space-y-2 mb-6">
-        {features.slice(0, 4).map((feature, i) => (
+        {categories.slice(0, 4).map((category, i) => (
           <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
             <svg
               className="w-4 h-4 text-secondary shrink-0 mt-0.5"
@@ -50,7 +50,7 @@ export default function ServiceCard({
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            {feature}
+            {category.name}
           </li>
         ))}
       </ul>

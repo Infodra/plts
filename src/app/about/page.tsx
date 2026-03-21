@@ -37,11 +37,17 @@ export default function AboutPage() {
               <p className="text-gray-600 leading-relaxed mb-6">
                 {COMPANY.description}
               </p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                PLTS specializes in engineering, installation, testing, and commissioning services for EHV (Extra High Voltage) / HV (High Voltage) substations and MEP Facility Management Services. With a team of highly skilled and experienced professionals, the company ensures that every project is executed with precision, safety, and efficiency, meeting both client expectations and international standards.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Our operations are supported by advanced tools, modern equipment, and proven methodologies that align with the latest industry technologies. This enables us to handle complex projects while maintaining strict quality control and adherence to project timelines.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                At PLTS, we believe that our people are our greatest strength. Our dedicated workforce is continuously trained to stay updated with evolving technologies and industry best practices, ensuring superior service delivery across all projects.
+              </p>
               <p className="text-gray-600 leading-relaxed">
-                We are supported by experienced professionals, precision tools and tackles,
-                and specialised installation of EHV &amp; HV substation &amp; testing equipment
-                in line with state-of-the-art technology. This enables us to provide the best
-                services with absolute customer satisfaction.
+                We are committed to building long-term relationships with our clients by providing dependable services, maintaining transparency, and upholding the highest standards of quality and safety. Our goal is to contribute to the development of Qatar&apos;s power infrastructure by delivering solutions that are efficient, sustainable, and future-ready.
               </p>
             </div>
             <div className="relative rounded-2xl overflow-hidden shadow-lg">

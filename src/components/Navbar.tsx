@@ -35,7 +35,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <Image
-              src={scrolled ? "/images/logo.svg" : "/images/logo-white.svg"}
+              src="/images/logo.png"
               alt={`${COMPANY.shortName} Qatar Logo`}
               width={180}
               height={48}
