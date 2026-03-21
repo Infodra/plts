@@ -430,12 +430,12 @@ export const TEAM = [
   {
     name: "Mr. S K Sakthivel",
     role: "CEO",
-    qualifications: "KAHRAMAA, QATAR ENERGY and UPDA Approved Engineer",
+    qualifications: "KAHRAMAA, QATAR ENERGY & UPDA Approved Engineer",
   },
   {
     name: "Mr. Arun Antony",
     role: "General Manager",
-    qualifications: "KAHRAMAA, QATAR ENERGY and UPDA Approved Engineer",
+    qualifications: "KAHRAMAA, QATAR ENERGY & UPDA Approved Engineer",
   },
 ] as const;
 
