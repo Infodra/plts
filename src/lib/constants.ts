@@ -56,11 +56,14 @@ export const SERVICES = [
         ],
       },
       {
-        name: "Power Quality & Monitoring",
+        name: "Electrical Condition Monitoring",
         items: [
-          "Power quality analysis and reporting",
-          "Installation of energy monitoring systems",
-          "Harmonic analysis and mitigation solutions",
+          "Transformer oil analysis and dissolved gas analysis (DGA)",
+          "Partial discharge monitoring and testing",
+          "Thermal imaging and infrared inspection of electrical assets",
+          "HV and MV panel and transformer PD test assessment",
+          "Motor current signature analysis (MCSA)",
+          "Motor vibration and analysis",
         ],
       },
       {
@@ -380,6 +383,46 @@ export const SERVICES = [
       "Use of Advanced Tools & Technology",
     ],
   },
+  {
+    id: "kahramaa",
+    title: "Kahramaa Services",
+    icon: "🏛️",
+    image: "/images/services-kahramaa.png",
+    description:
+      "PLTS provides comprehensive Kahramaa-related services, including substation access coordination, emergency shutdowns, meter installations, and load upgradation for commercial buildings — ensuring seamless compliance and coordination with Kahramaa authorities.",
+    description2:
+      "Our experienced team handles all aspects of Kahramaa coordination, from initial approvals to final commissioning, ensuring smooth and timely execution of all utility-related projects.",
+    categories: [
+      {
+        name: "Kahramaa Coordination & Access",
+        items: [
+          "Kahramaa substation LOA access",
+          "Emergency shutdown coordination",
+        ],
+      },
+      {
+        name: "Metering & Installation",
+        items: [
+          "Water shifting and new meter installation & coordination",
+          "Electrical meter installation and coordination",
+        ],
+      },
+      {
+        name: "Load Upgradation & Testing",
+        items: [
+          "Commercial building electrical load upgradation",
+          "REF relay testing and complete coordination",
+        ],
+      },
+    ],
+    keyBenefits: [
+      "End-to-end Kahramaa coordination and approvals",
+      "Experienced team familiar with Kahramaa procedures",
+      "Timely execution of meter installations and load changes",
+      "Full compliance with Kahramaa standards and regulations",
+      "Seamless emergency shutdown coordination",
+    ],
+  },
 ] as const;
 
 export const PRODUCTS = [
@@ -433,7 +476,12 @@ export const TEAM = [
     qualifications: "KAHRAMAA, QATAR ENERGY & UPDA Approved Engineer",
   },
   {
-    name: "Mr. Arun Antony",
+    name: "Mr. Antony Samy",
+    role: "Vice CEO",
+    qualifications: "KAHRAMAA, QATAR ENERGY & UPDA Approved Engineer",
+  },
+  {
+    name: "Mr. Venish",
     role: "General Manager",
     qualifications: "KAHRAMAA, QATAR ENERGY & UPDA Approved Engineer",
   },

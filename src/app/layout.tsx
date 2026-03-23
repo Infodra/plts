@@ -38,6 +38,10 @@ export const metadata: Metadata = {
     title: `${COMPANY.shortName} Qatar — ${COMPANY.tagline}`,
     description: COMPANY.description,
   },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   robots: {
     index: true,
     follow: true,
