@@ -48,19 +48,15 @@ export default function ClientLogos() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className={`rounded-xl p-6 flex items-center justify-center h-28 shadow-sm border border-gray-100 hover:shadow-md hover:border-secondary/20 transition-all group ${"logo" in client && client.logo ? "bg-white" : cardColors[index % cardColors.length]}`}
+              className="rounded-xl p-6 flex items-center justify-center h-28 shadow-sm border border-gray-100 hover:shadow-md hover:border-secondary/20 transition-all group bg-white"
             >
-              {"logo" in client && client.logo ? (
-                <Image
-                  src={(client as unknown as { logo: string }).logo}
-                  alt={client.name}
-                  width={120}
-                  height={60}
-                  className="max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all"
-                />
-              ) : (
-                <span className={`font-bold text-center leading-tight ${client.name.length > 10 ? "text-xs" : "text-base"}`}>{client.name}</span>
-              )}
+              <Image
+                src={client.logo}
+                alt={client.name}
+                width={120}
+                height={60}
+                className="max-h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all"
+              />
             </motion.div>
           ))}
         </div>

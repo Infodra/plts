@@ -61,18 +61,14 @@ export default function ClientsContent() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-8 flex flex-col items-center justify-center shadow-sm border border-gray-100 hover:shadow-xl hover:border-secondary/20 transition-all group"
               >
-                <div className={`w-32 h-32 rounded-2xl flex items-center justify-center mb-4 transition-colors overflow-hidden p-3 ${"logo" in client && client.logo ? "bg-gray-50 group-hover:bg-secondary/5" : cardColors[index % cardColors.length]}`}>
-                  {"logo" in client && client.logo ? (
-                    <Image
-                      src={(client as unknown as { logo: string }).logo}
-                      alt={client.name}
-                      width={120}
-                      height={120}
-                      className="max-h-28 w-auto object-contain"
-                    />
-                  ) : (
-                    <span className={`font-bold text-center leading-tight ${client.name.length > 10 ? "text-xs" : "text-lg"}`}>{client.name}</span>
-                  )}
+                <div className="w-32 h-32 rounded-2xl flex items-center justify-center mb-4 transition-colors overflow-hidden p-3 bg-gray-50 group-hover:bg-secondary/5">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={120}
+                    height={120}
+                    className="max-h-28 w-auto object-contain"
+                  />
                 </div>
               </motion.div>
             ))}
