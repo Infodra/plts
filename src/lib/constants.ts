@@ -470,21 +470,6 @@ export const TEAM = [
     role: "Managing Director",
     qualifications: "T B Al - Raseei",
   },
-  {
-    name: "Mr. S K Sakthivel",
-    role: "CEO",
-    qualifications: "KAHRAMAA, QATAR ENERGY & UPDA Approved Engineer",
-  },
-  {
-    name: "Mr. Antony Samy",
-    role: "Vice CEO",
-    qualifications: "KAHRAMAA, QATAR ENERGY & UPDA Approved Engineer",
-  },
-  {
-    name: "Mr. Venish",
-    role: "General Manager",
-    qualifications: "KAHRAMAA, QATAR ENERGY & UPDA Approved Engineer",
-  },
 ] as const;
 
 export const CLIENTS = [
@@ -499,16 +484,23 @@ export const CLIENTS = [
   { name: "Mak Bava", logo: "/images/logos/mak-bava.png" },
   { name: "NCC", logo: "/images/logos/ncc.png" },
   { name: "Končar D&ST", logo: "/images/logos/koncar-dst.jpg" },
-  { name: "KM" },
-  { name: "QE" },
-  { name: "QF" },
-  { name: "SNC" },
-  { name: "Waseef" },
-  { name: "Elegencia" },
-  { name: "Raffels" },
-  { name: "EMCO" },
-  { name: "Gulf Air" },
-  { name: "Influx Services & Trading" },
+  { name: "Assiyana Facility Management", logo: "/images/logos/assiyana.png" },
+  { name: "Qatargas", logo: "/images/logos/qatargas.png" },
+  { name: "Qatar Petroleum", logo: "/images/logos/qatar-petroleum.png" },
+  { name: "Woqod", logo: "/images/logos/woqod.png" },
+  { name: "Kahramaa", logo: "/images/logos/kahramaa.png" },
+  { name: "Qatar Foundation", logo: "/images/logos/qatarfoundation.png" },
+  { name: "SNC-Lavalin", logo: "/images/logos/snc-lavalin.png" },
+  { name: "Waseef", logo: "/images/logos/waseef.png" },
+  { name: "Caterpillar", logo: "/images/logos/caterpillar.png" },
+  { name: "Cosco", logo: "/images/logos/cosco.png" },
+  { name: "Elsewedy", logo: "/images/logos/elsewedy.png" },
+  { name: "Gaifar", logo: "/images/logos/gaifar.png" },
+  { name: "Hilton", logo: "/images/logos/hilton.png" },
+  { name: "Manlift", logo: "/images/logos/manlift.png" },
+  { name: "Oryx", logo: "/images/logos/oryx.png" },
+  { name: "Veolia", logo: "/images/logos/veolia.png" },
+  { name: "Influx Services & Trading", logo: "/images/logos/influx.png" },
 ] as const;
 
 export const STATS = [

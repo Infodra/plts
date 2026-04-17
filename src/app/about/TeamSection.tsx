@@ -13,7 +13,7 @@ export default function TeamSection() {
           title="Meet the Team"
           description="Experienced professionals driving PLTS forward with expertise and dedication."
         />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {TEAM.map((member, index) => (
             <motion.div
               key={member.name}
